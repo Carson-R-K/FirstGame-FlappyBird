@@ -16,3 +16,9 @@ html, body {
   overflow: hidden; /* stops scrolling */
   touch-action: none; /* disables default touch gestures */
 }
+
+canvas {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none;     /* IE/Edge */
+  user-select: none;         /* standard */
+}
