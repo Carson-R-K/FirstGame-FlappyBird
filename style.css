@@ -1,22 +1,8 @@
-body {
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: #70c5ce;
-}
-
-canvas {
-  border: 8px solid #000;
-  background: #70c5ce;
-}
-
 html, body {
   margin: 0;
   padding: 0;
   overflow: hidden;      /* prevent scrolling */
-  touch-action: none;    /* disable default gestures */
+  touch-action: none;    /* disable gestures */
   background: #70c5ce;
 }
 
