@@ -8,17 +8,21 @@ body {
 }
 
 canvas {
-  border: 2px solid #000;
+  border: 8px solid #000;
   background: #70c5ce;
 }
 
 html, body {
-  overflow: hidden; /* stops scrolling */
-  touch-action: none; /* disables default touch gestures */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;      /* prevent scrolling */
+  touch-action: none;    /* disable default gestures */
+  background: #70c5ce;
 }
 
 canvas {
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none;     /* IE/Edge */
-  user-select: none;         /* standard */
+  display: block;
+  margin: auto;
+  -webkit-user-select: none;
+  user-select: none;
 }
