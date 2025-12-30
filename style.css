@@ -11,3 +11,8 @@ canvas {
   border: 2px solid #000;
   background: #70c5ce;
 }
+
+html, body {
+  overflow: hidden; /* stops scrolling */
+  touch-action: none; /* disables default touch gestures */
+}
