@@ -3,7 +3,7 @@ html, body {
   padding: 0;                 /* Remove default browser spacing */
   overflow: hidden;           /* Prevent scrolling during gameplay */
   touch-action: none;         /* Disable pinch, swipe, and double-tap gestures */
-  background: #70c5ce;        /* Sky-blue background behind the game */
+  background: #1982b0;        /* Sky-blue background behind the game. Was 70c5ce */
 }
 
 canvas {
