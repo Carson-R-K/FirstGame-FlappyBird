@@ -1,3 +1,5 @@
+const CACHE_NAME = 'flappy-bird-cache-v2';  // bump version to force update
+
 self.addEventListener('install', event => {
   /* Runs once when the service worker is installed */
 
