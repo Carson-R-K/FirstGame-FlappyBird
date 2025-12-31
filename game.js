@@ -92,7 +92,9 @@ function drawScore() {
 
 // --- GAME LOOP ---
 function update() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = '#70c5ce';                 // Sky-blue game background
+  ctx.fillRect(0, 0, canvas.width, canvas.height); // Paint the canvas
+
 
   bird.dy += 0.5; // gravity
   bird.y += bird.dy;
