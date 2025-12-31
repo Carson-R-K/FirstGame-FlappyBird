@@ -1,105 +1,29 @@
-<!DOCTYPE html>
-<!--
-  This tells the browser:
-  "This file uses modern HTML (HTML5)."
--->
+<!DOCTYPE html> <!-- Use modern HTML (HTML5) -->
 
-<html lang="en">
-<!--
-  Starts the HTML document.
-  lang="en" means the page is in English
-  (important for accessibility and screen readers).
--->
-
+<html lang="en"> <!-- Start document; language is English -->
 <head>
-  <!--
-    The <head> contains information ABOUT the page.
-    Stuff here usually doesn't show on the screen.
-  -->
+  <meta charset="UTF-8"> <!-- Prevent text/emoji encoding issues -->
 
-  <meta charset="UTF-8">
-  <!--
-    Sets the character encoding.
-    Prevents weird text bugs and allows emojis/symbols.
-  -->
+  <title>Flappy Bird PWA</title> <!-- Text shown in tab and app switcher -->
 
-  <title>Flappy Bird PWA</title>
-  <!--
-    The text shown in:
-    - the browser tab
-    - the app switcher on phones
-  -->
-
-  <link rel="manifest" href="manifest.json">
-  <!--
-    Connects this page to the PWA manifest.
-    This enables:
-    - app icon
-    - Add to Home Screen
-    - standalone app behavior
-  -->
-
-  <link rel="stylesheet" href="style.css">
-  <!--
-    Loads the CSS file.
-    CSS controls how things LOOK.
-  -->
+  <link rel="manifest" href="manifest.json"> <!-- Enables PWA features (icon, install) -->
+  <link rel="stylesheet" href="style.css"> <!-- Load CSS for styling -->
 
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <!--
-    VERY IMPORTANT for mobile devices.
-
-    width=device-width:
-      Makes the page match the phone's screen width
-
-    initial-scale=1.0:
-      Starts at normal zoom (no zoom in/out)
-
-    user-scalable=no:
-      Disables pinch zoom and double-tap zoom
-      (important for games)
-  -->
-
+  <!-- Match screen width and disable zoom for mobile gameplay -->
 </head>
 
 <body>
-  <!--
-    Everything inside <body> is visible on the screen.
-  -->
+  <canvas id="gameCanvas"></canvas> <!-- Game is drawn here -->
 
-  <canvas id="gameCanvas"></canvas>
-  <!--
-    Creates a canvas element.
-    This is where your entire game is drawn.
-
-    Think of it like a digital whiteboard.
-    JavaScript will draw everything here.
-
-    id="gameCanvas" lets JavaScript find it later.
-  -->
-
-  <script src="game.js"></script>
-  <!--
-    Loads your game logic.
-    This file controls:
-    - drawing
-    - physics
-    - input
-    - scoring
-  -->
+  <script src="game.js"></script> <!-- Load game logic -->
 
   <script>
-    /*
-      This registers the service worker,
-      which turns your website into a real PWA.
-    */
-
     if ('serviceWorker' in navigator) {
-      // Only runs if the browser supports service workers
-      navigator.serviceWorker.register('service-worker.js');
+      navigator.serviceWorker.register('service-worker.js'); /* Enable offline + install */
     }
   </script>
-
 </body>
 </html>
+
