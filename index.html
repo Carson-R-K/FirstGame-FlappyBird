@@ -1,33 +1,43 @@
-<!DOCTYPE html> <!-- Use modern HTML (HTML5) -->
+<!DOCTYPE html> <!-- Use modern HTML5 -->
 
-<html lang="en"> <!-- Start document; language is English -->
+<html lang="en"> <!-- Document language = English -->
 <head>
-  <meta charset="UTF-8"> <!-- Prevent text/emoji encoding issues -->
+  <meta charset="UTF-8"> <!-- Ensure correct text/emoji encoding -->
 
-  <meta name="apple-mobile-web-app-capable" content="yes">  <!-- Making it open as an app, not in the browser -->
-  
-  <link rel="apple-touch-icon" href="icon.png">  <!-- You forgot to put the icon in, you goober -->
-  
-  <title>Flappy Bird PWA</title> <!-- Text shown in tab and app switcher -->
+  <title>Flappy Bird PWA</title> <!-- Shown in browser tab / app switcher -->
 
-  <link rel="manifest" href="manifest.json"> <!-- Enables PWA features (icon, install) -->
-  <link rel="stylesheet" href="style.css"> <!-- Load CSS for styling -->
+  <!-- Manifest for PWA install, offline caching -->
+  <link rel="manifest" href="manifest.json">
 
+  <!-- Apple Home Screen icon -->
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <!-- Enable standalone mode for iOS PWAs -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <!-- Link to your CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Mobile viewport setup -->
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <!-- Match screen width and disable zoom for mobile gameplay -->
+  <!-- Match screen width; disable zoom for mobile gameplay -->
 </head>
 
 <body>
-  <canvas id="gameCanvas"></canvas> <!-- Game is drawn here -->
+  <!-- Canvas where the game will be drawn -->
+  <canvas id="gameCanvas"></canvas>
 
-  <script src="game.js"></script> <!-- Load game logic -->
+  <!-- Your game logic -->
+  <script src="game.js"></script>
 
+  <!-- Register service worker for offline + caching -->
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js'); /* Enable offline + install */
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('Service Worker registered'))
+        .catch(err => console.log('Service Worker registration failed:', err));
     }
   </script>
 </body>
 </html>
-
